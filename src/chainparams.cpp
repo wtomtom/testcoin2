@@ -57,34 +57,34 @@ public:
         nRPCPort = 18155;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
 
-        const char* pszTimestamp = "Testcoin tomtomcoin";
+        const char* pszTimestamp = "Testcoin tomtomcoinv2";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         std::vector<CTxOut> vout;
         vout.resize(1);
         vout[0].SetEmpty();
-        CTransaction txNew(1, 150901405, vin, vout, 0);
+        CTransaction txNew(1, 1505148039, vin, vout, 0);
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1504901405;
+        genesis.nTime    = 1505148039;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce   = 563596;
  
  //printf("MainNet GenesisBlockHash %s\n", genesis.GetHash().ToString().c_str());
-        //printf("MainNet GenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
-        //printf("MainNet Hashmerkleroot %s\n", genesis.hashMerkleRoot.ToString().c_str());
+   //     printf("MainNet GenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+     //   printf("MainNet Hashmerkleroot %s\n", genesis.hashMerkleRoot.ToString().c_str());
       
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0xb8ae6f6288868cc5eb8299a4da72c1da9e148d1f43a5ef8d84f33932d8c49c78"));
-        assert(genesis.hashMerkleRoot == uint256("0x6c30ea33461aa1593c22abc575809f29cbdf69b4300ae17b10dec6f8ce646c7f"));
+        assert(hashGenesisBlock == uint256("0x9e2c556f5bd32ae4a935993f94db3167d4acab58e9a1ede7b86fe37e8b82763f"));
+        assert(genesis.hashMerkleRoot == uint256("0x784e2a604572d39f690343b299b382a6ff79ee69b01f36a21e348332185b1e6d"));
 		
 		  
        // printf("Mainnet genesis.nTime = %u \n", genesis.nTime);
-        // printf("Mainnet genesis.nNonce = %u \n", genesis.nNonce);
-// printf("Mainnet genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+       // printf("Mainnet genesis.nNonce = %u \n", genesis.nNonce);
+ // printf("Mainnet genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
      
 	vSeeds.push_back(CDNSSeedData("testcoinnode.servep2p.com", "testcoinnode1.servep2p.com"));
  
