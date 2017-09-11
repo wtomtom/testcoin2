@@ -1,0 +1,2 @@
+debian/bin/testcoind usr/bin
+src/testcoind usr/lib/testcoin
